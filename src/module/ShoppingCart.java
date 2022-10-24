@@ -1,7 +1,7 @@
 package module;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
+
 
 public class ShoppingCart {
 	
@@ -32,11 +32,7 @@ public class ShoppingCart {
 		for(int i =0; i< this.cartItem.size();i++) {
 			System.out.println(this.cartItem.get(i).toString());
 		}
-//		ListIterator<CartItem> iterator = cartItem.listIterator();
-//		while(iterator.hasNext()) {
-//			CartItem item1 = iterator.next();
-//			System.out.println(item1);
-//		}
+
 	}
 	public void removeFromCart(CartItem removeItem) {
 		
@@ -45,14 +41,7 @@ public class ShoppingCart {
 				this.cartItem.remove(removeItem);
 			}
 		}
-		// ListIterator<CartItem> iterator1 = cartItem.listIterator();
-		// while(iterator1.hasNext()) {
-		// 	CartItem item2 = iterator1.next();
-		// 	if (item2.getProductName().equals(removeItem.getProductName())) {
-		// 		this.cartItem.remove(removeItem);
-		// 		break;
-		// 	}
-		// }
+
 	}
 	public double getTotalAmount() {
 		this.totalAmount = 0;
@@ -62,13 +51,7 @@ public class ShoppingCart {
 		
 		return this.totalAmount;
 		
-		// ListIterator<CartItem> iterator2 = cartItem.listIterator();
-		// this.totalAmount = 0;
-		// while(iterator2.hasNext()) {
-		// 	CartItem item3 = iterator2.next();
-		// 	this.totalAmount = this.totalAmount + (item3.getUnitPrice() * item3.getQuantity());
-		// }
-		// return this.totalAmount;
+
 	}
 	public void applyCoupon(String coupon) {
 		this.coupon = coupon;
@@ -76,9 +59,7 @@ public class ShoppingCart {
 			this.discount = this.getTotalAmount() * (0.1);
 			this.totalAmount = this.totalAmount - this.discount;
 		}
-		// } else {
-		// 	this.totalAmount = this.totalAmount;
-		// }
+
 	}
 	public double getPaymentAmount() {
 		this.paymentAmount = 0;
@@ -96,14 +77,7 @@ public class ShoppingCart {
 			System.out.println(this.cartItem.get(i).getUnitPrice()*this.cartItem.get(i).getQuantity());
 		}
 		
-		// ListIterator<CartItem> iterator3 = cartItem.listIterator();
-		// while(iterator3.hasNext()) {
-		// 	CartItem item4 = iterator3.next();
-		// 	System.out.print(item4.getProductName() + "\t");
-		// 	System.out.print(item4.getQuantity() + "\t");
-		// 	System.out.print(item4.getUnitPrice() + "\t");
-		// 	System.out.println(item4.getUnitPrice() * item4.getQuantity());
-		// }
+
 		System.out.println("\t\t\t" + "Total    : " + this.getTotalAmount());
 		this.applyCoupon(this.coupon);
 		System.out.println("\t\t\t" + "Discount : " + this.discount);
