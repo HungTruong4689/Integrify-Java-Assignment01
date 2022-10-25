@@ -2,19 +2,37 @@ package main;
 
 import module.CartItem;
 import module.Product;
+import module.ProductList;
 import module.ShoppingCart;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		String[] test = {"a","b","c"};
+		String[] test = { "a", "b", "c" };
 		
-		CartItem i1 = new CartItem(new Product("apple airpod", "vip","photo1link",test,test,test,25.0), 3);
-		CartItem i2 = new CartItem(new Product("samsung galaxy", "hightech","photo2link",test,test,test,75.50), 2);
-		CartItem i3 = new CartItem(new Product("kindle aws", "easy to read","photo3link",test,test,test,149.50), 1);
-		CartItem i4 = new CartItem(new Product("mac book pro", "coding fast","photo4link",test,test,test,1329.50), 50);
-		CartItem i5 = new CartItem(new Product("ssd hard drive", "1 tb","photo5link",test,test,test,238.50), 2);
+		Product p1 = new Product("apple airpod", "vip", "photo1link", test, test, test, 25.0);
+		Product p2 = new Product("samsung galaxy", "hightech","photo2link",test,test,test,75.50);
+		Product p3 = new Product("kindle aws", "easy to read","photo3link",test,test,test,149.50);
+		Product p4 = new Product("mac book pro", "coding fast","photo4link",test,test,test,1329.50);
+		Product p5 = new Product("ssd hard drive", "1 tb", "photo5link", test, test, test, 238.50);
+		
+		ProductList productList = new ProductList();
+		productList.addProduct(p1);
+		productList.addProduct(p2);
+		productList.addProduct(p3);
+		productList.addProduct(p4);
+		productList.addProduct(p5);
+
+		System.out.println("ALL PRODUCT");
+		productList.getAllProduct();
+		System.out.println("-----------------------------------------");
+		
+		CartItem i1 = new CartItem(p1, 3);
+		CartItem i2 = new CartItem(p2, 2);
+		CartItem i3 = new CartItem(p3, 1);
+		CartItem i4 = new CartItem(p4, 50);
+		CartItem i5 = new CartItem(p5, 2);
 		
 		
 		ShoppingCart cart = new ShoppingCart();
@@ -30,15 +48,15 @@ public class Main {
 	    
 	    
 	    //show cart
-	    System.out.println("Show CART: \n");
+	    System.out.println("Show CART: ");
 	    cart.showCart();
-	    
+	    System.out.println("-----------------------------------------");
 	    
 	    // check removeItem of the cart
 	    cart.removeFromCart(i4);
 	    
 	    //Print totalAmount
-	    System.out.println("Total Amount: \t"+cart.getTotalAmount());
+	    System.out.println("Total Amount:   \t"+cart.getTotalAmount());
 
 	    
 	    
@@ -52,7 +70,7 @@ public class Main {
 	    System.out.println("USING THE WRONG COUPON");
 	    System.out.println("Payment Invoice: ");
 	    cart.printPayment();
-	    
+	    System.out.println("-----------------------------------------");
 	    
 	    //Test the right coupon
 	    cart.applyCoupon("COUPON");

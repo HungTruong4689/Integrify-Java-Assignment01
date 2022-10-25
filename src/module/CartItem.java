@@ -13,39 +13,32 @@ public class CartItem {
 	}
 	
 	public String toString() {
-		String s = this.product.getName() + ":";
-		s = s+ "\t" + this.product.getPrice() ;
-		s = s+ "\t" + this.quantity + "\n";
+		String s = this.product.getName() + "\t";
+		s = s + this.product.getPrice() + "\t";
+		s = s + this.quantity + "\t";
 		return s;
 	}
-
 	
 	public String getProductName() {
 		return this.product.getName();
 	}
+
 	public int getQuantity() {
 		return this.quantity;
 	}
+	
 	public double getUnitPrice() {
 		return this.unitPrice;
 	}
-
-
 	public Product getProduct() {
 		return product;
 	}
-
 
 	public void setProduct(Product product) {
 		this.product = product;
 	}
 
-
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
-
-
-	
 }

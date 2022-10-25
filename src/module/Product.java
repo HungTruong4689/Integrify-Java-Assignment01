@@ -1,6 +1,5 @@
 package module;
 
-import java.util.Date;
 
 public class Product {
 
@@ -12,6 +11,13 @@ public class Product {
 	private String[] sizes;
 	double price;
 	//Date createdDate;
+
+	public String toString() {
+		String s = this.name + "\t";
+		s = s + this.description + "\t";
+		s = s + this.price  + "\t";
+		return s;
+	}
 	public String getName() {
 		return name;
 	}
